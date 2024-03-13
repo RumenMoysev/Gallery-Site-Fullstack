@@ -21,6 +21,8 @@ button {
 body {
     min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    background-image: url(assets/images/20240305_170240.jpg);
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
 }
