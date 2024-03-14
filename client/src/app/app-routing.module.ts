@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { PaintingsListComponent } from './models/paintings/paintings-list/paintings-list.component';
 
 const routes: Routes = [];
+    { path: '', component: HomeComponent },
     { path: 'gallery', component: PaintingsListComponent}
 
 @NgModule({
