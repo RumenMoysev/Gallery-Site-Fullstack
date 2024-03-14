@@ -8,6 +8,7 @@ import { HeaderComponent } from './models/core/header/header.component';
 import { RegisterComponent } from './models/user/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PaintingsListComponent } from './models/paintings/paintings-list/paintings-list.component';
+import { AddPaintingComponent } from './models/paintings/add-painting/add-painting.component';
 
 @NgModule({
     declarations: [
@@ -16,7 +17,8 @@ import { PaintingsListComponent } from './models/paintings/paintings-list/painti
         HeaderComponent,
         RegisterComponent,
         HomeComponent,
-        PaintingsListComponent
+        PaintingsListComponent,
+        AddPaintingComponent
     ],
     imports: [
         BrowserModule,
