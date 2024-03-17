@@ -47,7 +47,7 @@
     z-index: -1;
 }
 
-.form .input-box input:valid+span,
+.form .input-box input:not(:placeholder-shown)+span,
 .form .input-box input:focus+span {
     top: -20px;
 }
@@ -91,4 +91,39 @@
 
 .form .register-link p a:hover {
     text-decoration: underline;
+}
+
+.error-container {
+    min-width: 150px;
+    min-height: 80px;
+    background: transparent;
+    border: solid 2px rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    box-shadow: 0 0 10px 2px black;
+    border-radius: 0.5rem;
+    padding: 0 15px;
+    position: fixed;
+    top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: slideIn 12s ease forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        right: -200px;
+    }
+
+    8% {
+        right: 6%;
+    }
+
+    83.33% {
+        right: 6%;
+    }
+
+    100% {
+        right: -200px;
+    }
 }
