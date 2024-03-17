@@ -9,6 +9,7 @@ import { RegisterComponent } from './models/user/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { PaintingsListComponent } from './models/paintings/paintings-list/paintings-list.component';
 import { AddPaintingComponent } from './models/paintings/add-painting/add-painting.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { AddPaintingComponent } from './models/paintings/add-painting/add-painti
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
