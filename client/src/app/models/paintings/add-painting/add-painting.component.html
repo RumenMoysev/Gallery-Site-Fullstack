@@ -1,27 +1,62 @@
 <section class="addPaintingPage center">
-    <form class="form">
+    <form class="form" #form="ngForm" (ngSubmit)="login(form)">
         <h2>Add a painting</h2>
         <div class="input-box">
-            <input type="text" name="" id="" required>
+            <input type="text" placeholder="" name="paintingName" id="" ngModel #inputPaintingName="ngModel" required minlength="4">
             <span>Painting Name</span>
             <i class='bx bx-palette'></i>
         </div>
         <div class="input-box">
-            <input type="text" name="" id="" required>
+            <input type="text" placeholder="" name="summary" id="" ngModel #inputSummary="ngModel" required minlength="10">
             <span>Description Summary</span>
             <i class='bx bx-dots-horizontal-rounded'></i>
         </div>
         <div class="input-box">
-            <input type="text" name="" id="" required>
+            <input type="text" placeholder="" name="description" id="" ngModel #inputDescription="ngModel" required minlength="20">
             <span>Description</span>
             <i class='bx bx-list-ul'></i>
         </div>
         <div class="input-box">
-            <input type="text" name="" id="" required>
+            <input type="text" placeholder="" name="imageUrl" id="" ngModel #inputImageUrl="ngModel" required minlength="10">
             <span>Image Url</span>
             <i class='bx bx-image-add'></i>
         </div>
-
         <button class="formBtn">Add</button>
     </form>
+    
+    <ng-container *ngIf="inputPaintingName.touched">
+        <div class="error-container" *ngIf="inputPaintingName.errors?.['required']">
+            <p>Name is required!</p>
+        </div>
+        
+        <div class="error-container" *ngIf="inputPaintingName.errors?.['minlength']">
+            <p>Name should be more than 4 characters!</p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="inputSummary.touched">
+        <div class="error-container" *ngIf="inputSummary.errors?.['required']">
+            <p>Summary is required!</p>
+        </div>
+        
+        <div class="error-container" *ngIf="inputSummary.errors?.['minlength']">
+            <p>Summary should be more than 10 characters!</p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="inputDescription.touched">
+        <div class="error-container" *ngIf="inputDescription.errors?.['required']">
+            <p>Description is required!</p>
+        </div>
+        <div class="error-container" *ngIf="inputDescription.errors?.['minlength']">
+            <p>Description should be more than 20 characters!</p>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="inputImageUrl.touched">
+        <div class="error-container" *ngIf="inputImageUrl.errors?.['required']">
+            <p>ImageUrl is required!</p>
+        </div>
+        <div class="error-container" *ngIf="inputImageUrl.errors?.['minlength']">
+            <p>ImageUrl should be more than 10 characters!</p>
+        </div>
+    </ng-container>
+
 </section>
