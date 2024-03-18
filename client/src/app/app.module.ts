@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { PaintingsListComponent } from './models/paintings/paintings-list/paintings-list.component';
 import { AddPaintingComponent } from './models/paintings/add-painting/add-painting.component';
 import { FormsModule } from '@angular/forms';
+import { EmailDirectiveDirective } from './models/user/directives/email-directive.directive';
+import { ImageUrlDirective} from './models/paintings/directives/image-url-directive.directive';
 
 @NgModule({
     declarations: [
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
         RegisterComponent,
         HomeComponent,
         PaintingsListComponent,
-        AddPaintingComponent
+        AddPaintingComponent,
+        EmailDirectiveDirective,
+        ImageUrlDirective
     ],
     imports: [
         BrowserModule,
