@@ -17,7 +17,7 @@
             <i class='bx bx-list-ul'></i>
         </div>
         <div class="input-box">
-            <input type="text" placeholder="" name="imageUrl" id="" ngModel #inputImageUrl="ngModel" required minlength="10">
+            <input type="text" placeholder="" name="imageUrl" id="" ngModel #inputImageUrl="ngModel" required minlength="10" appImageUrlDirective>
             <span>Image Url</span>
             <i class='bx bx-image-add'></i>
         </div>
@@ -56,6 +56,9 @@
         </div>
         <div class="error-container" *ngIf="inputImageUrl.errors?.['minlength']">
             <p>ImageUrl should be more than 10 characters!</p>
+        </div>
+        <div  class="error-container" *ngIf="inputImageUrl.errors?.['imageUrlInvalid'] && !inputImageUrl.errors?.['minlength'] && !inputImageUrl.errors?.['required']">
+            <p>Please provide a real imageUrl!</p>
         </div>
     </ng-container>
 
