@@ -4,8 +4,6 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { EmailDirectiveDirective } from './directives/email-directive.directive';
 
-
-
 @NgModule({
   declarations: [
     RegisterComponent,
