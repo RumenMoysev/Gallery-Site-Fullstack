@@ -2,7 +2,7 @@
     <form class="form" #form="ngForm" (ngSubmit)="register(form)">
         <h2>Register</h2>
         <div class="input-box">
-            <input type="email" name="email" placeholder="" id="email" ngModel #inputEmail="ngModel" required minlength="5">
+            <input type="email" name="email" placeholder="" id="email" ngModel #inputEmail="ngModel" required minlength="5" appEmail>
             <span>Email</span>
             <i class='bx bx-envelope'></i>
         </div>
@@ -37,6 +37,9 @@
         </div>
         <div class="error-container" *ngIf="inputEmail.errors?.['minlength']">
             <p>Email should be at least 5 characters!</p>
+        </div>
+        <div class="error-container" *ngIf="inputEmail.errors?.['incorrectEmail'] && !inputEmail.errors?.['required'] && !inputEmail.errors?.['minlength']">
+            <p>Please provide a correct email!</p>
         </div>
     </ng-container>
     <ng-container *ngIf="inputUsername.touched">
