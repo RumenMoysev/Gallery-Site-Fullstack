@@ -24,42 +24,44 @@
         <button class="formBtn">Add</button>
     </form>
     
-    <ng-container *ngIf="inputPaintingName.touched">
-        <div class="error-container" *ngIf="inputPaintingName.errors?.['required']">
-            <p>Name is required!</p>
-        </div>
-        
-        <div class="error-container" *ngIf="inputPaintingName.errors?.['minlength']">
-            <p>Name should be more than 4 characters!</p>
-        </div>
-    </ng-container>
-    <ng-container *ngIf="inputSummary.touched">
-        <div class="error-container" *ngIf="inputSummary.errors?.['required']">
-            <p>Summary is required!</p>
-        </div>
-        
-        <div class="error-container" *ngIf="inputSummary.errors?.['minlength']">
-            <p>Summary should be more than 10 characters!</p>
-        </div>
-    </ng-container>
-    <ng-container *ngIf="inputDescription.touched">
-        <div class="error-container" *ngIf="inputDescription.errors?.['required']">
-            <p>Description is required!</p>
-        </div>
-        <div class="error-container" *ngIf="inputDescription.errors?.['minlength']">
-            <p>Description should be more than 20 characters!</p>
-        </div>
-    </ng-container>
-    <ng-container *ngIf="inputImageUrl.touched">
-        <div class="error-container" *ngIf="inputImageUrl.errors?.['required']">
-            <p>ImageUrl is required!</p>
-        </div>
-        <div class="error-container" *ngIf="inputImageUrl.errors?.['minlength']">
-            <p>ImageUrl should be more than 10 characters!</p>
-        </div>
-        <div  class="error-container" *ngIf="inputImageUrl.errors?.['imageUrlInvalid'] && !inputImageUrl.errors?.['minlength'] && !inputImageUrl.errors?.['required']">
-            <p>Please provide a real imageUrl!</p>
-        </div>
-    </ng-container>
+    <div class="error-container">
+        <ng-container *ngIf="inputPaintingName.touched">
+            <div class="error" *ngIf="inputPaintingName.errors?.['required']">
+                <p>Name is required!</p>
+            </div>
+            
+            <div class="error" *ngIf="inputPaintingName.errors?.['minlength']">
+                <p>Name should be more than 4 characters!</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="inputSummary.touched">
+            <div class="error" *ngIf="inputSummary.errors?.['required']">
+                <p>Summary is required!</p>
+            </div>
+            
+            <div class="error" *ngIf="inputSummary.errors?.['minlength']">
+                <p>Summary should be more than 10 characters!</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="inputDescription.touched">
+            <div class="error" *ngIf="inputDescription.errors?.['required']">
+                <p>Description is required!</p>
+            </div>
+            <div class="error" *ngIf="inputDescription.errors?.['minlength']">
+                <p>Description should be more than 20 characters!</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="inputImageUrl.touched">
+            <div class="error" *ngIf="inputImageUrl.errors?.['required']">
+                <p>ImageUrl is required!</p>
+            </div>
+            <div class="error" *ngIf="inputImageUrl.errors?.['minlength']">
+                <p>ImageUrl should be more than 10 characters!</p>
+            </div>
+            <div  class="error" *ngIf="inputImageUrl.errors?.['imageUrlInvalid'] && !inputImageUrl.errors?.['minlength'] && !inputImageUrl.errors?.['required']">
+                <p>Please provide a real imageUrl!</p>
+            </div>
+        </ng-container>
+    </div>
 
 </section>
