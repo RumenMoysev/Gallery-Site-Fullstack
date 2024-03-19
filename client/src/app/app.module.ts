@@ -3,32 +3,22 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './models/user/login/login.component';
-import { HeaderComponent } from './models/core/header/header.component';
-import { RegisterComponent } from './models/user/register/register.component';
+import { HeaderComponent } from './models/core/header/header.component';;
 import { HomeComponent } from './components/home/home.component';
-import { PaintingsListComponent } from './models/paintings/paintings-list/paintings-list.component';
-import { AddPaintingComponent } from './models/paintings/add-painting/add-painting.component';
-import { FormsModule } from '@angular/forms';
-import { EmailDirectiveDirective } from './models/user/directives/email-directive.directive';
-import { ImageUrlDirective} from './models/paintings/directives/image-url-directive.directive';
+import { UserModule } from './models/user/user.module';
+import { PaintingsModule } from './models/paintings/paintings.module';
 
 @NgModule({
     declarations: [
         AppComponent,
-        LoginComponent,
         HeaderComponent,
-        RegisterComponent,
-        HomeComponent,
-        PaintingsListComponent,
-        AddPaintingComponent,
-        EmailDirectiveDirective,
-        ImageUrlDirective
+        HomeComponent
     ],
     imports: [
         BrowserModule,
-        AppRoutingModule,
-        FormsModule
+        UserModule,
+        PaintingsModule,
+        AppRoutingModule
     ],
     providers: [],
     bootstrap: [AppComponent]
