@@ -31,41 +31,44 @@
         </div>
     </form>
 
-    <ng-container *ngIf="inputEmail.touched">
-        <div class="error-container" *ngIf="inputEmail.errors?.['required']">
-            <p>Email is required!</p>
-        </div>
-        <div class="error-container" *ngIf="inputEmail.errors?.['minlength']">
-            <p>Email should be at least 5 characters!</p>
-        </div>
-        <div class="error-container" *ngIf="inputEmail.errors?.['incorrectEmail'] && !inputEmail.errors?.['required'] && !inputEmail.errors?.['minlength']">
-            <p>Please provide a correct email!</p>
-        </div>
-    </ng-container>
-    <ng-container *ngIf="inputUsername.touched">
-        <div class="error-container" *ngIf="inputUsername.errors?.['required']">
-            <p>Username is required!</p>
-        </div>
-        <div class="error-container" *ngIf="inputUsername.errors?.['minlength']">
-            <p>Username should be at least 4 characters!</p>
-        </div>
-    </ng-container>
-
-    <ng-container *ngIf="inputPassword.touched">
-        <div class="error-container" *ngIf="inputPassword.errors?.['required']">
-            <p>Password is required!</p>
-        </div>
-        <div class="error-container" *ngIf="inputPassword.errors?.['minlength']">
-            <p>Password should be at least 4 characters!</p>
-        </div>
-    </ng-container>
-
-    <ng-container *ngIf="inputRepeatPassword.touched">
-        <div class="error-container" *ngIf="inputRepeatPassword.errors?.['required']">
-            <p>Repeat password is required!</p>
-        </div>
-        <div class="error-container" *ngIf="passwords.errors?.['passwordsDoNotMatch']">
-            <p>Passwords do not match!</p>
-        </div>
-    </ng-container>
+    <div class="error-container">    
+        <ng-container *ngIf="inputEmail.touched">
+            <div class="error" *ngIf="inputEmail.errors?.['required']">
+                <p>Email is required!</p>
+            </div>
+            
+            <div class="error" *ngIf="inputEmail.errors?.['minlength']">
+                <p>Email should be at least 5 characters!</p>
+            </div>
+            <div class="error" *ngIf="inputEmail.errors?.['incorrectEmail'] && !inputEmail.errors?.['required'] && !inputEmail.errors?.['minlength']">
+                <p>Please provide a correct email!</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="inputUsername.touched">
+            <div class="error" *ngIf="inputUsername.errors?.['required']">
+                <p>Username is required!</p>
+            </div>
+            <div class="error" *ngIf="inputUsername.errors?.['minlength']">
+                <p>Username should be at least 4 characters!</p>
+            </div>
+        </ng-container>
+    
+        <ng-container *ngIf="inputPassword.touched">
+            <div class="error" *ngIf="inputPassword.errors?.['required']">
+                <p>Password is required!</p>
+            </div>
+            <div class="error" *ngIf="inputPassword.errors?.['minlength']">
+                <p>Password should be at least 4 characters!</p>
+            </div>
+        </ng-container>
+    
+        <ng-container *ngIf="inputRepeatPassword.touched">
+            <div class="error" *ngIf="inputRepeatPassword.errors?.['required']">
+                <p>Repeat password is required!</p>
+            </div>
+            <div class="error" *ngIf="passwords.errors?.['passwordsDoNotMatch']">
+                <p>Passwords do not match!</p>
+            </div>
+        </ng-container>
+    </div>
 </section>
