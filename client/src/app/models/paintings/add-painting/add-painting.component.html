@@ -2,22 +2,22 @@
     <form class="form" #form="ngForm" (ngSubmit)="login(form)">
         <h2>Add a painting</h2>
         <div class="input-box">
-            <input type="text" placeholder="" name="paintingName" id="" ngModel #inputPaintingName="ngModel" required minlength="4">
+            <input type="text" placeholder="" name="paintingName" id="" ngModel #inputPaintingName="ngModel" required minlength="4" [ngModelOptions]="{updateOn: 'blur'}">
             <span>Painting Name</span>
             <i class='bx bx-palette'></i>
         </div>
         <div class="input-box">
-            <input type="text" placeholder="" name="summary" id="" ngModel #inputSummary="ngModel" required minlength="10">
+            <input type="text" placeholder="" name="summary" id="" ngModel #inputSummary="ngModel" required minlength="10" [ngModelOptions]="{updateOn: 'blur'}">
             <span>Description Summary</span>
             <i class='bx bx-dots-horizontal-rounded'></i>
         </div>
         <div class="input-box">
-            <input type="text" placeholder="" name="description" id="" ngModel #inputDescription="ngModel" required minlength="20">
+            <input type="text" placeholder="" name="description" id="" ngModel #inputDescription="ngModel" required minlength="20" [ngModelOptions]="{updateOn: 'blur'}">
             <span>Description</span>
             <i class='bx bx-list-ul'></i>
         </div>
         <div class="input-box">
-            <input type="text" placeholder="" name="imageUrl" id="" ngModel #inputImageUrl="ngModel" required minlength="10" appImageUrlDirective>
+            <input type="text" placeholder="" name="imageUrl" id="" ngModel #inputImageUrl="ngModel" required minlength="10" appImageUrlDirective [ngModelOptions]="{updateOn: 'blur'}">
             <span>Image Url</span>
             <i class='bx bx-image-add'></i>
         </div>
