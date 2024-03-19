@@ -94,7 +94,15 @@
 }
 
 .error-container {
-    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 15%;
+    right: 5%;
+    gap: 10px
+}
+
+.error {
     min-height: 80px;
     background: transparent;
     border: solid 2px rgba(255, 255, 255, 0.2);
@@ -102,8 +110,7 @@
     box-shadow: 0 0 10px 2px black;
     border-radius: 0.5rem;
     padding: 0 15px;
-    position: fixed;
-    top: 15%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
