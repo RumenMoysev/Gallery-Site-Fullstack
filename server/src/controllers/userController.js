@@ -14,6 +14,7 @@ router.post('/register', async (req, res) => {
     try {
         const [user, authToken] = await userManager.register(userData, rePassword)
 
+        res.cookie('authToken', authToken)
         res.json({
             authToken: authToken,
             email: user.email,
