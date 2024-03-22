@@ -16,7 +16,6 @@ router.post('/register', async (req, res) => {
 
         res.cookie('authToken', authToken)
         res.json({
-            authToken: authToken,
             email: user.email,
             username: user.username,
             userId: user._id
