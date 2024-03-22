@@ -3,9 +3,9 @@ const bcrypt = require('bcrypt')
 const jwt = require('../lib/jwtPromise.js')
 const SECRET = require('../configs/config.js')
 
-const usernameLength = 5
-const emailLength = 7
-const passwordLength = 5
+const usernameLength = 4
+const emailLength = 5
+const passwordLength = 4
 
 function validate(userData, rePassword) {
     if (userData.email.length < emailLength) {
