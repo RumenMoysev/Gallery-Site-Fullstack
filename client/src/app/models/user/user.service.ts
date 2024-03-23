@@ -28,6 +28,10 @@ export class UserService implements OnDestroy{
         return this.http.post('api/users/register', { email, username, password, repeatPassword }).pipe(tap((user) => this.user$$.next(user as User)))
     }
 
+    login(email: string, username: string, password: string) {
+        return this.http.post('api/users/login', { email, username, password }).pipe(tap((user) => this.user$$.next(user as User)))
+    }
+
     ngOnDestroy(): void {
         this.userSubscription.unsubscribe()
     }
