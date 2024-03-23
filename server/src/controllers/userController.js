@@ -38,8 +38,8 @@ router.post('/login', async (req, res) => {
     try {
         const [user, authToken] = await userManager.login(userData)
 
+        res.cookie('authToken', authToken)
         res.json({
-            authToken: authToken,
             email: user.email,
             username: user.username,
             userId: user._id
