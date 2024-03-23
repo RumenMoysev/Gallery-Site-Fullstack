@@ -10,9 +10,13 @@
     <nav class="navbar">
         <a routerLink="/" style="--i:1;">Home</a>
         <a routerLink="/gallery" style="--i:2;">Gallery</a>
-        <a routerLink="/login" style="--i:3;">Login</a>
-        <a routerLink="/register" style="--i:4;">Register</a>
-        <a routerLink="/register" style="--i:5;">Logout</a>
-        <a routerLink="/add-painting" style="--i:6;">Add Painting</a>
+        <ng-container *ngIf="!isLoggedIn">
+            <a routerLink="/login" style="--i:3;">Login</a>
+            <a routerLink="/register" style="--i:4;">Register</a>
+        </ng-container>
+        <ng-container *ngIf="isLoggedIn">
+            <a routerLink="/register" style="--i:5;">Logout</a>
+            <a routerLink="/add-painting" style="--i:6;">Add Painting</a>
+        </ng-container>  
     </nav>
 </header>
