@@ -47,7 +47,7 @@ exports.login = async (userData) => {
     try {
         validate(userData)
 
-        const user = await User.findOne({ email: userData.email })
+        const user = await User.findOne({ email: userData.email, username: userData.username })
 
         if (user) {
             const isValid = await bcrypt.compare(userData.password, user.password)
@@ -58,7 +58,7 @@ exports.login = async (userData) => {
 
             return getAuthResult(user)
         } else {
-            throw new Error('Email or password do not match!')
+            throw new Error('Email, username or password do not match!')
         }
     } catch (error) {
         throw new Error(error.message)
