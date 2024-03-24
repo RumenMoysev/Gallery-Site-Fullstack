@@ -65,6 +65,16 @@ exports.login = async (userData) => {
     }
 }
 
+exports.findUser = async (userId) => {
+    const user = await User.findById(userId)
+
+    if(user) {
+        return getAuthResult(user)
+    } else {
+        throw new Error('Invalid userId!')
+    }
+}
+
 async function getAuthResult(user) {
     const payload = {
         _id: user._id,
