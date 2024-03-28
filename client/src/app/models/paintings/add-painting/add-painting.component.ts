@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { PaintingsService } from '../paintings.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-painting',
@@ -7,9 +9,12 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./add-painting.component.css']
 })
 export class AddPaintingComponent {
-  login(form: NgForm) {
+  constructor(private paintingsService: PaintingsService, private router: Router) {}
+
+  addPainting(form: NgForm) {
     if(form.valid) {
-      console.log('works')
+      this.paintingsService.addPainting(form.value.paintingTitle, form.value.summary, form.value.description, form.value.imageUrl).subscribe()
+      this.router.navigate(['/gallery'])
     }
   }
 }

@@ -1,9 +1,9 @@
 <section class="addPaintingPage center">
-    <form class="form" #form="ngForm" (ngSubmit)="login(form)">
+    <form class="form" #form="ngForm" (ngSubmit)="addPainting(form)">
         <h2>Add a painting</h2>
         <div class="input-box">
-            <input type="text" placeholder="" name="paintingName" id="" ngModel #inputPaintingName="ngModel" required minlength="4" [ngModelOptions]="{updateOn: 'blur'}">
-            <span>Painting Name</span>
+            <input type="text" placeholder="" name="paintingTitle" id="" ngModel #inputPaintingTitle="ngModel" required minlength="4" [ngModelOptions]="{updateOn: 'blur'}">
+            <span>Painting Title</span>
             <i class='bx bx-palette'></i>
         </div>
         <div class="input-box">
@@ -17,7 +17,7 @@
             <i class='bx bx-list-ul'></i>
         </div>
         <div class="input-box">
-            <input type="text" placeholder="" name="imageUrl" id="" ngModel #inputImageUrl="ngModel" required minlength="10" appImageUrlDirective [ngModelOptions]="{updateOn: 'blur'}">
+            <input type="text" placeholder="" name="imageUrl" id="" ngModel #inputImageUrl="ngModel" required appImageUrlDirective [ngModelOptions]="{updateOn: 'blur'}">
             <span>Image Url</span>
             <i class='bx bx-image-add'></i>
         </div>
@@ -25,13 +25,13 @@
     </form>
     
     <div class="error-container">
-        <ng-container *ngIf="inputPaintingName.touched">
-            <div class="error" *ngIf="inputPaintingName.errors?.['required']">
-                <p>Name is required!</p>
+        <ng-container *ngIf="inputPaintingTitle.touched">
+            <div class="error" *ngIf="inputPaintingTitle.errors?.['required']">
+                <p>Title is required!</p>
             </div>
             
-            <div class="error" *ngIf="inputPaintingName.errors?.['minlength']">
-                <p>Name should be more than 4 characters!</p>
+            <div class="error" *ngIf="inputPaintingTitle.errors?.['minlength']">
+                <p>Title should be more than 4 characters!</p>
             </div>
         </ng-container>
         <ng-container *ngIf="inputSummary.touched">
