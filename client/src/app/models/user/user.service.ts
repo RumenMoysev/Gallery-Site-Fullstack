@@ -20,7 +20,7 @@ export class UserService implements OnDestroy{
         })
     }
 
-    get isLoggedIn() {
+    get isLoggedIn(): boolean {
         return this.user ? true : false
     }
 
