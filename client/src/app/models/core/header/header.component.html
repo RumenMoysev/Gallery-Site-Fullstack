@@ -15,7 +15,7 @@
             <a routerLink="/register" style="--i:4;">Register</a>
         </ng-container>
         <ng-container *ngIf="isLoggedIn">
-            <a routerLink="/register" style="--i:5;">Logout</a>
+            <a routerLink="/register" style="--i:5;" (click)="logout()">Logout</a>
             <a routerLink="/add-painting" style="--i:6;">Add Painting</a>
         </ng-container>  
     </nav>

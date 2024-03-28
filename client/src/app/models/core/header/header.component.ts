@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../user/user.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-header',
@@ -11,11 +12,16 @@ export class HeaderComponent implements OnInit {
         return this.userService.isLoggedIn
     }
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private router: Router) { }
 
     ngOnInit(): void {
         if (document.cookie.includes('userId=')) {
             this.userService.getUser().subscribe()
         }
+    }
+
+    logout(): void {
+        this.userService.logout().subscribe()
+        this.router.navigate(['/'])
     }
 }
