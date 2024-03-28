@@ -73,7 +73,9 @@ router.get('/getUser', async (req, res) => {
     }
 })
 
-router.get('/logout', (req, res) => {
+router.post('/logout', (req, res) => {
+    res.clearCookie('authToken')
+    res.clearCookie('userId')
     res.end()
 })
 
