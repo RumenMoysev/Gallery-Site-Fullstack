@@ -14,6 +14,20 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:paintingId', async (req, res) => {
+    const paintingId = req.params.paintingId
+
+    try {
+        const paintingDetails = await paintingsManager.getPaintingDetails(paintingId)
+
+        res.status(200).json(paintingDetails)
+    } catch (err) {
+        res.status(401).json({
+            message: err.message
+        })
+    }
+})
+
 router.post('/', async (req, res) => {
     const userId = req.cookies.userId
 

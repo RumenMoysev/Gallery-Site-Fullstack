@@ -30,6 +30,14 @@ exports.getAllPaintings = () => {
     }
 }
 
+exports.getPaintingDetails = (paintingId) => {
+    try {
+        return Painting.findById(paintingId, 'title imageUrl summary description createdAtTime updatedAtTime likes _id owner')
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
 exports.createPainting = (paintingData) => {
     try {
         validate(paintingData)
