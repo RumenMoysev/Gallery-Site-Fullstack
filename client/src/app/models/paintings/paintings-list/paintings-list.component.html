@@ -1,50 +1,14 @@
 <section class="paintingsPage">
-        <article class="paintingContainer">
-            <h3>The Hand</h3>
+        <article *ngFor="let painting of paintings" class="paintingContainer">
+            <h3>{{painting.title}}</h3>
             <div class="innerContainer">
                 <div class="pBtnContainer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello!aaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+                    <p>{{painting.summary}}</p>
                     <div>
-                        <a class="detailsBtn" href="#">Details</a>
+                        <a class="detailsBtn" routerLink={{painting._id}}>Details</a>
                     </div>
                 </div>
-                <img src="assets/images/20240305_170240.jpg" />
-            </div>
-        </article>
-        <article class="paintingContainer">
-            <h3>The Hand</h3>
-            <div class="innerContainer">
-                <div class="pBtnContainer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello!aaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <div>
-                        <a class="detailsBtn" routerLink="details">Details</a>
-                    </div>
-                </div>
-                <img src="assets/images/20240305_170240.jpg" />
-            </div>
-        </article>
-        <article class="paintingContainer">
-            <h3>The Hand</h3>
-            <div class="innerContainer">
-                <div class="pBtnContainer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello!aaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <div>
-                        <a class="detailsBtn" href="#">Details</a>
-                    </div>
-                </div>
-                <img src="assets/images/20240305_170240.jpg" />
-            </div>
-        </article>
-        <article class="paintingContainer">
-            <h3>The Hand</h3>
-            <div class="innerContainer">
-                <div class="pBtnContainer">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello!aaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
-                    <div>
-                        <a class="detailsBtn" href="#">Details</a>
-                    </div>
-                </div>
-                <img src="assets/images/20240305_170240.jpg" />
+                <img src={{painting.imageUrl}} />
             </div>
         </article>
 </section>
