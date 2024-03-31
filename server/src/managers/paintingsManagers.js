@@ -22,6 +22,14 @@ function validate (paintingData) {
     }
 }
 
+exports.getAllPaintings = () => {
+    try {
+        return Painting.find({}, 'title imageUrl summary createdAtTime updatedAtTime _id')
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
 exports.createPainting = (paintingData) => {
     try {
         validate(paintingData)

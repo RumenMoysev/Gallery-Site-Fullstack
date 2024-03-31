@@ -2,6 +2,18 @@ const router = require('express').Router()
 
 const paintingsManager = require('../managers/paintingsManagers.js')
 
+router.get('/', async (req, res) => {
+    try {
+        const paintings = await paintingsManager.getAllPaintings()
+
+        res.status(200).json(paintings)
+    } catch (err) {
+        res.status(401).json({
+            message: err.message
+        })
+    }
+})
+
 router.post('/', async (req, res) => {
     const userId = req.cookies.userId
 
