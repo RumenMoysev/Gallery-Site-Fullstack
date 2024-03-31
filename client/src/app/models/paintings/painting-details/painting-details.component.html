@@ -1,25 +1,24 @@
 <section class="detailsPage center">
     <article class="detailsContainer">
         <div class="headingContainer">
-            <h2>The Hand</h2>
+            <h2>{{paintingDetails?.title}}</h2>
             <div>
-                <p>Created on: </p>
-                <p>Last updated on: </p>
+                <p>Created on: {{paintingDetails?.createdAtTime}}</p>
+                <p>Last updated on: {{paintingDetails?.updatedAtTime}}</p>
             </div>
         </div>
         <div class="infoContainer">
             <div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hello!aaaaaaaaaaaaaaaaaaaaaaaaaaaa Details
-                </p>
+                <p>{{paintingDetails?.description}}</p>
                 <div class="detailsBtnContainer">
-                    <a class="detailsBtn" href="#">Like</a>
-                    <a class="detailsBtn" href="#">Edit</a>
-                    <a class="detailsBtn" href="#">Delete</a>
+                    <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/like'>Like</a>
+                    <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/edit'>Edit</a>
+                    <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/delete'>Delete</a>
                 </div>
             </div>
             <div class="imgContainer">
-                <img src="./images/20240305_170240.jpg" />
-                <p class="likeCount">Number of likes: 1</p>
+                <img src={{paintingDetails?.imageUrl}}/>
+                <p class="likeCount">Number of likes: {{paintingDetails?.likes?.length}}</p>
             </div>
         </div>
     </article>
