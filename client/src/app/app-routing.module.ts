@@ -15,7 +15,7 @@ const routes: Routes = [
     { path: 'gallery',
         children: [
             { path: '', pathMatch: 'full', component: PaintingsListComponent },
-            { path: ':themeId', component: PaintingDetailsComponent }
+            { path: ':paintingId', component: PaintingDetailsComponent }
         ]
     },
     { path: 'add-painting', canActivate: [authGuard], component: AddPaintingComponent}
