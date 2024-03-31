@@ -30,8 +30,7 @@ const paintingSchema = new mongoose.Schema({
         }
     ],
     owner: {
-        type: mongoose.Types.ObjectId,
-        required: true
+        type: mongoose.Types.ObjectId
     }
 })
 
