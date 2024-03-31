@@ -6,3 +6,15 @@ export interface painting {
     updatedAtTime: string,
     _id: string
 }
+
+export interface paintingDetails {
+    title: string,
+    imageUrl: string,
+    summary: string,
+    description: string,
+    createdAtTime: string,
+    updatedAtTime: string,
+    likes: string[],
+    owner: string,
+    _id: string
+}
