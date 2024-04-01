@@ -38,11 +38,29 @@ exports.getPaintingDetails = (paintingId) => {
     }
 }
 
+exports.getPaintingOwner = (paintingId) => {
+    try {
+        return Painting.findById(paintingId, 'owner')
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
 exports.createPainting = (paintingData) => {
     try {
         validate(paintingData)
 
         return Painting.create(paintingData)
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
+exports.editPainting = (paintingData, paintingId) => {
+    try {
+        validate(paintingData)
+
+        return Painting.findByIdAndUpdate(paintingId, paintingData)
     } catch (err) {
         throw new Error(err.message)
     }
