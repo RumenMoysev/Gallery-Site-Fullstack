@@ -6,13 +6,15 @@ import { PaintingDetailsComponent } from './painting-details/painting-details.co
 import { ImageUrlDirective } from './directives/image-url-directive.directive';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { EditPaintingComponent } from './edit-painting/edit-painting.component';
 
 @NgModule({
   declarations: [
     PaintingsListComponent,
     AddPaintingComponent,
     PaintingDetailsComponent,
-    ImageUrlDirective
+    ImageUrlDirective,
+    EditPaintingComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,72 @@
+<section class="editPaintingPage center" *ngIf="paintingDetails">
+    <form class="form" #form="ngForm" (ngSubmit)="editPainting(form)">
+        <h2>Edit painting</h2>
+        <div class="input-box">
+            <input type="text" placeholder="" name="paintingTitle" id=""  ngModel #inputPaintingTitle="ngModel" 
+                minlength="4" [ngModel]="paintingDetails.title" [ngModelOptions]="{updateOn: 'blur'}">
+            <span>Painting Title</span>
+            <i class='bx bx-palette'></i>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="" name="summary" id="" [ngModel]="paintingDetails.summary" ngModel #inputSummary="ngModel" 
+                minlength="10" [ngModelOptions]="{updateOn: 'blur'}">
+            <span>Description Summary</span>
+            <i class='bx bx-dots-horizontal-rounded'></i>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="" name="description" id="" [ngModel]="paintingDetails.description" ngModel #inputDescription="ngModel" 
+                minlength="20" [ngModelOptions]="{updateOn: 'blur'}">
+            <span>Description</span>
+            <i class='bx bx-list-ul'></i>
+        </div>
+        <div class="input-box">
+            <input type="text" placeholder="" name="imageUrl" id="" [ngModel]="paintingDetails.imageUrl" ngModel #inputImageUrl="ngModel" 
+                appImageUrlDirective [ngModelOptions]="{updateOn: 'blur'}">
+            <span>Image Url</span>
+            <i class='bx bx-image-add'></i>
+        </div>
+        <button class="formBtn">Confirm Edit</button>
+    </form>
+
+    <div class="error-container">
+        <ng-container *ngIf="inputPaintingTitle.touched">
+            <div class="error" *ngIf="inputPaintingTitle.errors?.['required']">
+                <p>Title is required!</p>
+            </div>
+
+            <div class="error" *ngIf="inputPaintingTitle.errors?.['minlength']">
+                <p>Title should be more than 4 characters!</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="inputSummary.touched">
+            <div class="error" *ngIf="inputSummary.errors?.['required']">
+                <p>Summary is required!</p>
+            </div>
+
+            <div class="error" *ngIf="inputSummary.errors?.['minlength']">
+                <p>Summary should be more than 10 characters!</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="inputDescription.touched">
+            <div class="error" *ngIf="inputDescription.errors?.['required']">
+                <p>Description is required!</p>
+            </div>
+            <div class="error" *ngIf="inputDescription.errors?.['minlength']">
+                <p>Description should be more than 20 characters!</p>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="inputImageUrl.touched">
+            <div class="error" *ngIf="inputImageUrl.errors?.['required']">
+                <p>ImageUrl is required!</p>
+            </div>
+            <div class="error" *ngIf="inputImageUrl.errors?.['minlength']">
+                <p>ImageUrl should be more than 10 characters!</p>
+            </div>
+            <div class="error"
+                *ngIf="inputImageUrl.errors?.['imageUrlInvalid'] && !inputImageUrl.errors?.['minlength'] && !inputImageUrl.errors?.['required']">
+                <p>Please provide a real imageUrl!</p>
+            </div>
+        </ng-container>
+    </div>
+
+</section>
