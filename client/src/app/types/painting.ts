@@ -15,6 +15,6 @@ export interface paintingDetails {
     createdAtTime: string,
     updatedAtTime: string,
     likes: string[],
-    owner: string,
+    owner: string | boolean,
     _id: string
 }
