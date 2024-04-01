@@ -7,6 +7,7 @@ import { PaintingsListComponent } from './models/paintings/paintings-list/painti
 import { AddPaintingComponent } from './models/paintings/add-painting/add-painting.component';
 import { PaintingDetailsComponent } from './models/paintings/painting-details/painting-details.component';
 import { authGuard } from './guards/auth.guard';
+import { EditPaintingComponent } from './models/paintings/edit-painting/edit-painting.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
     { path: 'gallery',
         children: [
             { path: '', pathMatch: 'full', component: PaintingsListComponent },
-            { path: ':paintingId', component: PaintingDetailsComponent }
+            { path: ':paintingId', component: PaintingDetailsComponent },
+            { path: ':paintingId/edit', canActivate: [authGuard], component: EditPaintingComponent }
         ]
     },
     { path: 'add-painting', canActivate: [authGuard], component: AddPaintingComponent}
