@@ -65,3 +65,11 @@ exports.editPainting = (paintingData, paintingId) => {
         throw new Error(err.message)
     }
 }
+
+exports.deletePainting = (paintingId) => {
+    try {
+        return Painting.findByIdAndDelete(paintingId)
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}

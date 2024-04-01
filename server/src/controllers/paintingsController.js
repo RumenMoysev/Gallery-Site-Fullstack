@@ -81,4 +81,27 @@ router.put('/:paintingId', async (req, res) => {
     }
 })
 
+router.delete('/:paintingId', async (req, res) => {
+    const paintingId = req.params.paintingId
+    const userId = req.cookies.userId
+
+    try {
+        const painting = await paintingsManager.getPaintingOwner(paintingId)
+
+        if(painting.owner == userId) {
+            await paintingsManager.deletePainting(paintingId)
+            res.status(200).end()
+        }
+        else {
+            res.status(400).json({
+                message: "You are not the owner"
+            })
+        }
+    } catch (err) {
+        res.status(401).json({
+            message: err.message
+        })
+    }
+})
+
 module.exports = router
