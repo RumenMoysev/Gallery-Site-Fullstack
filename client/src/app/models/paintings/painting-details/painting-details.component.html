@@ -16,7 +16,7 @@
                     </ng-container>
                     <ng-container *ngIf="paintingDetails?.owner">
                     <a class="detailsBtn" routerLink='edit'>Edit</a>
-                    <a class="detailsBtn" routerLink='delete'>Delete</a>
+                    <a class="detailsBtn" href='' (click)="deletePainting($event)">Delete</a>
                     </ng-container>
                 </div>
             </div>

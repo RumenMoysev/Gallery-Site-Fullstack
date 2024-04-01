@@ -25,4 +25,8 @@ export class PaintingsService {
         const updatedAtTime = new Date().toLocaleString('en-GB', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', timeZoneName: 'shortOffset' })
         return this.http.put(`api/paintings/${paintingId}`, {title, summary, description, imageUrl, updatedAtTime})
     }
+
+    deletePainting(paintingId: string) {
+        return this.http.delete(`api/paintings/${paintingId}`)
+    }
 }

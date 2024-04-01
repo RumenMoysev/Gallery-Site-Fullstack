@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PaintingsService } from '../paintings.service';
 import { paintingDetails } from 'src/app/types/painting';
 import { UserService } from '../../user/user.service';
@@ -16,7 +16,8 @@ export class PaintingDetailsComponent implements OnInit {
     constructor(
         private activatedRoute: ActivatedRoute,
         private paintingsService: PaintingsService,
-        private userService: UserService
+        private userService: UserService,
+        private router: Router
     ) { }
 
     ngOnInit(): void {
@@ -28,5 +29,12 @@ export class PaintingDetailsComponent implements OnInit {
             this.paintingDetails = details as paintingDetails
             this.paintingDetails.owner = this.paintingDetails.owner === this.userService.userId
         })
+    }
+
+    deletePainting(event: Event) {
+        event.preventDefault()
+        if (confirm('Are you sure you want to delete this painting?')) {
+            this.paintingsService.deletePainting(this.paintingDetails?._id as string).subscribe(data => this.router.navigate(['/gallery']))
+        }
     }
 }
