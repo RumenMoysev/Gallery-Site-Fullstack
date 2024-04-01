@@ -11,9 +11,13 @@
             <div>
                 <p>{{paintingDetails?.description}}</p>
                 <div class="detailsBtnContainer">
-                    <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/like'>Like</a>
+                    <ng-container *ngIf="!paintingDetails?.owner">
+                        <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/like'>Like</a>
+                    </ng-container>
+                    <ng-container *ngIf="paintingDetails?.owner">
                     <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/edit'>Edit</a>
                     <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/delete'>Delete</a>
+                    </ng-container>
                 </div>
             </div>
             <div class="imgContainer">
