@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PaintingsService } from '../paintings.service';
 import { paintingDetails } from 'src/app/types/painting';
-import { tap } from 'rxjs';
 import { UserService } from '../../user/user.service';
 
 @Component({
