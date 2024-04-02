@@ -20,6 +20,10 @@ export class PaintingDetailsComponent implements OnInit {
         private router: Router
     ) { }
 
+    get isLoggedIn() {
+        return this.userService.isLoggedIn
+    }
+
     ngOnInit(): void {
         this.activatedRoute.params.subscribe(data => this.getPaintingDetails(data['paintingId']))
     }
@@ -36,5 +40,11 @@ export class PaintingDetailsComponent implements OnInit {
         if (confirm('Are you sure you want to delete this painting?')) {
             this.paintingsService.deletePainting(this.paintingDetails?._id as string).subscribe(data => this.router.navigate(['/gallery']))
         }
+    }
+
+    likePainting(event: Event) {
+        event.preventDefault()
+
+        console.log('like')
     }
 }
