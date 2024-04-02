@@ -75,6 +75,22 @@ exports.findUser = async (userId) => {
     }
 }
 
+exports.addToCreated = (userId, paintingId) => {
+    try {
+        return User.findByIdAndUpdate(userId, {$push: {ownedPaintings: paintingId}})
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
+exports.addToLiked = (userId, paintingId) => {
+    try {
+        return User.findByIdAndUpdate(userId, {$push: {likedPaintings: paintingId}})
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
 async function getAuthResult(user) {
     const payload = {
         _id: user._id,

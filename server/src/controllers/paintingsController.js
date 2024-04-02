@@ -1,6 +1,7 @@
 const router = require('express').Router()
 
 const paintingsManager = require('../managers/paintingsManagers.js')
+const userManager = require('../managers/userManager.js')
 
 router.get('/', async (req, res) => {
     try {
@@ -42,6 +43,7 @@ router.post('/', async (req, res) => {
 
     try {
         const painting = await paintingsManager.createPainting(paintingData)
+        await userManager.addToCreated(userId, painting._id)
 
         res.status(201).json(painting)
     } catch (err) {
@@ -61,6 +63,7 @@ router.post('/:paintingId/like', async (req, res) => {
 
             if(!painting.likes.includes(userId) && painting.owner != userId) {
                 await paintingsManager.likePainting(paintingId, userId)
+                await userManager.addToLiked(userId, paintingId)
                 res.status(200).end()
             } else {
                 res.status(401).json({
