@@ -11,8 +11,8 @@
             <div>
                 <p>{{paintingDetails?.description}}</p>
                 <div class="detailsBtnContainer">
-                    <ng-container *ngIf="!paintingDetails?.owner">
-                        <a class="detailsBtn" routerLink='{{paintingDetails?._id}}/like'>Like</a>
+                    <ng-container *ngIf="!paintingDetails?.owner && isLoggedIn">
+                        <a class="detailsBtn" href="" (click)="likePainting($event)">Like</a>
                     </ng-container>
                     <ng-container *ngIf="paintingDetails?.owner">
                     <a class="detailsBtn" routerLink='edit'>Edit</a>
