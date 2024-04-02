@@ -13,7 +13,19 @@ const userSchema = new mongoose.Schema({
     password: {
         type: String,
         required: true
-    }
+    },
+    ownedPaintings: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Painting'
+        }
+    ],
+    likedPaintings: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref: 'Painting'
+        }
+    ]
 })
 
 const User = mongoose.model('User', userSchema)
