@@ -9,12 +9,14 @@ import { HomeComponent } from './components/home/home.component';
 import { UserModule } from './models/user/user.module';
 import { PaintingsModule } from './models/paintings/paintings.module';
 import { appInterceptorProvider } from './app.interceptor';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        HomeComponent
+        HomeComponent,
+        ProfileComponent
     ],
     imports: [
         BrowserModule,

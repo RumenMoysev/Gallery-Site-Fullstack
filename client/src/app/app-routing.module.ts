@@ -8,6 +8,7 @@ import { AddPaintingComponent } from './models/paintings/add-painting/add-painti
 import { PaintingDetailsComponent } from './models/paintings/painting-details/painting-details.component';
 import { authGuard } from './guards/auth.guard';
 import { EditPaintingComponent } from './models/paintings/edit-painting/edit-painting.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -20,7 +21,8 @@ const routes: Routes = [
             { path: ':paintingId/edit', canActivate: [authGuard], component: EditPaintingComponent }
         ]
     },
-    { path: 'add-painting', canActivate: [authGuard], component: AddPaintingComponent}
+    { path: 'add-painting', canActivate: [authGuard], component: AddPaintingComponent},
+    { path: 'my-profile', canActivate: [authGuard], component: ProfileComponent}
 ];
 
 @NgModule({
