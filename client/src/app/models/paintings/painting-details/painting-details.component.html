@@ -11,12 +11,11 @@
             <div>
                 <p>{{paintingDetails?.description}}</p>
                 <div class="detailsBtnContainer">
-                    <ng-container *ngIf="!paintingDetails?.owner && isLoggedIn">
-                        <a class="detailsBtn" href="" (click)="likePainting($event)">Like</a>
-                    </ng-container>
+                    <a *ngIf="!paintingDetails?.owner && isLoggedIn && !hasLiked" class="detailsBtn" href="" (click)="likePainting($event)">Like</a>
+                    <p *ngIf="hasLiked">Thanks for liking!</p>
                     <ng-container *ngIf="paintingDetails?.owner">
-                    <a class="detailsBtn" routerLink='edit'>Edit</a>
-                    <a class="detailsBtn" href='' (click)="deletePainting($event)">Delete</a>
+                        <a class="detailsBtn" routerLink='edit'>Edit</a>
+                        <a class="detailsBtn" href='' (click)="deletePainting($event)">Delete</a>
                     </ng-container>
                 </div>
             </div>
