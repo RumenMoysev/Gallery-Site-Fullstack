@@ -51,6 +51,30 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.post('/:paintingId/like', async (req, res) => {
+    const paintingId = req.params.paintingId
+    const userId = req.cookies?.userId
+
+    try {
+        if (userId) {
+            const painting = await paintingsManager.getPaintingDetails(paintingId)
+
+            if(!painting.likes.includes(userId) && painting.owner != userId) {
+                await paintingsManager.likePainting(paintingId, userId)
+                res.status(200).end()
+            } else {
+                res.status(401).json({
+                    message: 'You have already liked this painting!'
+                })
+            }
+        }
+    } catch (error) {
+        res.status(401).json({
+            message: err.message
+        })
+    }
+})
+
 router.put('/:paintingId', async (req, res) => {
     const userId = req.cookies.userId
     const paintingId = req.params.paintingId

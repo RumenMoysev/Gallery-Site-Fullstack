@@ -73,3 +73,11 @@ exports.deletePainting = (paintingId) => {
         throw new Error(err.message)
     }
 }
+
+exports.likePainting = (paintingId, userId) => {
+    try {
+        return Painting.findByIdAndUpdate(paintingId, {$addToSet: {likes: userId}})
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}

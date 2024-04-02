@@ -29,4 +29,8 @@ export class PaintingsService {
     deletePainting(paintingId: string) {
         return this.http.delete(`api/paintings/${paintingId}`)
     }
+
+    likePainting(paintingId: string) {
+        return this.http.post(`api/paintings/${paintingId}/like`, {})
+    } 
 }

@@ -24,6 +24,10 @@ export class PaintingDetailsComponent implements OnInit {
         return this.userService.isLoggedIn
     }
 
+    get hasLiked() {
+        return this.paintingDetails?.likes.includes(this.userService.userId as string)
+    }
+
     ngOnInit(): void {
         this.activatedRoute.params.subscribe(data => this.getPaintingDetails(data['paintingId']))
     }
@@ -45,6 +49,9 @@ export class PaintingDetailsComponent implements OnInit {
     likePainting(event: Event) {
         event.preventDefault()
 
-        console.log('like')
+        if(this.isLoggedIn && !this.hasLiked) {
+            this.paintingDetails?.likes.push(this.userService.userId as string)
+            this.activatedRoute.params.subscribe(data => this.paintingsService.likePainting(data['paintingId']).subscribe())
+        }
     }
 }
