@@ -46,12 +46,12 @@ In the first one enter the server folder and start the server
 cd server
 npm run start
 ```
-In the second one enter the client folder and start the client.
 If you don't have angular installed firstly install it using this command
 ```bash
 npm install -g @angular/cli
 ```
 
+In the second one enter the client folder and start the client.
 ```bash
 cd client
 ng serve
