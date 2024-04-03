@@ -7,17 +7,14 @@
             <button type="button" (click)='buttonRedirect()'>Explore</button>
         </div>
         <div class="col">
-            <div class="card"
-                style="background-image: url('https://i.pinimg.com/736x/cb/c6/62/cbc662299bd35357e519fe867444b86c.jpg');">
-                <h4>The Bird</h4>
-                <p>Sint pariatur, quod voluptatum optio obcaecati quasi iure, dolore numquam explicabo libero quisquam quam
-                    molestias.</p>
-            </div>
-            <div class="card"
-                style="background-image: url('https://i.pinimg.com/736x/cb/c6/62/cbc662299bd35357e519fe867444b86c.jpg');">
-                <h4>The Bird</h4>
-                <p>Sint pariatur, quod voluptatum optio obcaecati quasi iure, dolore numquam explicabo libero quisquam quam
-                    molestias.</p>
+            <div class="card" *ngFor="let painting of paintings" (click)="cardRedirect(painting._id)"
+                style="background-image: url({{painting.imageUrl}});">
+                <h4>{{painting.title}}</h4>
+                <p>{{painting.summary}}</p>
+                <div class="likeContainer">
+                    <img src="assets/images/like.svg" />
+                    <p class="likesCount">{{painting.likes?.length}}</p>
+                </div>
             </div>
         </div>
     </div>

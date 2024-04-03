@@ -12,6 +12,10 @@ export class PaintingsService {
         return this.http.get('api/paintings')
     }
 
+    getLast2() {
+        return this.http.get('api/paintings/last2')
+    }
+
     getPaintingsDetails(paintingId: string) {
         return this.http.get(`api/paintings/${paintingId}`)
     }
