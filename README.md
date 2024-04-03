@@ -7,7 +7,7 @@ This repository is my project with Angular called Gallery Site (Fullstack with a
 </p>
 <img alt="GitHub last commit (by committer)" src="https://img.shields.io/github/last-commit/RumenMoysev/Gallery-Site-Fullstack">
 
-This repository is my project with AngularJS; Typescript and Express called Gallery Site. It's a fullstack application.
+This repository is my project with Angular, Typescript and Express called Gallery Site. It's a fullstack application.
 ## Overview
 This website is a platform for people who are art lovers and want to share some beautiful paintings between each other. The project utilizes various technologies including RESTful APIs powered by Express for the backend, user authentication with JWT (JSON Web Tokens), Angular for the frontend, and MongoDB with Mongoose for data storage.
 
@@ -46,7 +46,7 @@ In the first one enter the server folder and start the server
 cd server
 npm run start
 ```
-In the second one enter the client folder and start the client
+In the second one enter the client folder and start the client.
 If you don't have angular installed firstly install it using this command
 ```bash
 npm install -g @angular/cli
