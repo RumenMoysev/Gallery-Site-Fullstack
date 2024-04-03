@@ -38,6 +38,10 @@ cd ../
 cd server
 npm i
 ```
+If you don't have angular installed firstly install it using this command
+```bash
+npm install -g @angular/cli
+```
 
 ## Usage
 ### Open two terminals from the root project directory
@@ -45,10 +49,6 @@ In the first one enter the server folder and start the server
 ```bash
 cd server
 npm run start
-```
-If you don't have angular installed firstly install it using this command
-```bash
-npm install -g @angular/cli
 ```
 
 In the second one enter the client folder and start the client.
