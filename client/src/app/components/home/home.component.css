@@ -104,7 +104,14 @@ main .col .card p {
 
 @media (max-width: 1223px) {
     main .col .card {
-        /* width: 250px; */
+        width: 370px;
+        height: 250px;
+    }
+}
+
+@media (max-width: 823px) {
+    main .col .card {
+        width: 250px;
         height: 250px;
     }
 }
