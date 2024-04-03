@@ -7,6 +7,7 @@
             <button type="button" (click)='buttonRedirect()'>Explore</button>
         </div>
         <div class="col">
+            <ng-container *ngIf="paintings">
             <div class="card" *ngFor="let painting of paintings" (click)="cardRedirect(painting._id)"
                 style="background-image: url({{painting.imageUrl}});">
                 <h4>{{painting.title}}</h4>
@@ -16,6 +17,8 @@
                     <p class="likesCount">{{painting.likes?.length}}</p>
                 </div>
             </div>
+            </ng-container>
+            <p *ngIf="!paintings" style="font-size: 40px; padding-left: 200px;">No paintings yet!</p>
         </div>
     </div>
 </main>

@@ -1,4 +1,5 @@
 <section class="paintingsPage">
+    <ng-container *ngIf="paintings">
         <article *ngFor="let painting of paintings" class="paintingContainer">
             <h3>{{painting.title}}</h3>
             <div class="innerContainer">
@@ -11,4 +12,6 @@
                 <img src={{painting.imageUrl}} />
             </div>
         </article>
+    </ng-container>
+    <p *ngIf="!paintings" style="font-size: 40px; text-shadow: 0 0 10px black;">No paintings yet!</p>
 </section>
