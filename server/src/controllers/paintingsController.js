@@ -15,6 +15,18 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/last2', async (req, res) => {
+    try {
+        const paintings = await paintingsManager.getLast2()
+
+        res.status(200).json(paintings)
+    } catch (err) {
+        res.status(401).json({
+            message: err.message
+        })
+    }
+})
+
 router.get('/:paintingId', async (req, res) => {
     const paintingId = req.params.paintingId
 

@@ -30,6 +30,14 @@ exports.getAllPaintings = () => {
     }
 }
 
+exports.getLast2 = () => {
+    try {
+        return Painting.find(undefined, 'title imageUrl summary likes _id').sort({$natural: -1}).limit(2)
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
 exports.getPaintingDetails = (paintingId) => {
     try {
         return Painting.findById(paintingId, 'title imageUrl summary description createdAtTime updatedAtTime likes _id owner')
