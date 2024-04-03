@@ -9,21 +9,26 @@
     
     <section class="profile">
         <div class='profileButtons'>
-            <button>Posted</button>
-            <button class='selected'>Liked</button>
+            <button [ngClass]="{'selected': ownedSelected}"  (click)="getOwned()">Posted</button>
+            <button [ngClass]="{'selected': likedSelected}" (click)="getLiked()">Liked</button>
         </div>
-        <article class="paintingContainer">
-            <h3>nigga</h3>
+        <div class="paintingsPage1">
+        <ng-container *ngIf="paintings">
+        <article *ngFor="let painting of paintings" class="paintingContainer">
+            <h3>{{painting.title}}</h3>
             <div class="innerContainer">
                 <div class="pBtnContainer">
-                    <p>nigga</p>
+                    <p>{{painting.summary}}</p>
                     <div>
-                        <a class="detailsBtn" routerLink=>Details</a>
+                        <a class="detailsBtn" routerLink='/gallery/{{painting._id}}'>Details</a>
                     </div>
                 </div>
-                <img src="" />
+                <img src="{{painting.imageUrl}}" />
             </div>
         </article>
+        </ng-container>
+        <p *ngIf="!paintings">No reviews yet!</p>
+        </div>
     </section>
 </section>
 </section>
