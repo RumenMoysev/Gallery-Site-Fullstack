@@ -4,6 +4,7 @@ export interface painting {
     summary: string,
     createdAtTime: string,
     updatedAtTime: string,
+    likes: string[] | undefined,
     _id: string
 }
 
