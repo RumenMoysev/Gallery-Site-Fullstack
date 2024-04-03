@@ -91,6 +91,22 @@ exports.addToLiked = (userId, paintingId) => {
     }
 }
 
+exports.getOwned = (userId) => {
+    try {
+        return User.findById(userId).populate('ownedPaintings')
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
+exports.getLiked = (userId) => {
+    try {
+        return User.findById(userId).populate('likedPaintings')
+    } catch (err) {
+        throw new Error(err.message)
+    }
+}
+
 async function getAuthResult(user) {
     const payload = {
         _id: user._id,

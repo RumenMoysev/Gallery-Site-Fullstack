@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
 })
 
 router.get('/getUser', async (req, res) => {
-    const userId = req.cookies.userId
+    const userId = req.cookies?.userId
     
     try {
         const [user, authToken] = await userManager.findUser(userId)
@@ -67,6 +67,42 @@ router.get('/getUser', async (req, res) => {
             username: user.username,
             userId: user._id
         })
+    } catch (err) {
+        res.status(400).json({
+            message: err.message
+        })
+    }
+})
+
+router.get('/getOwnedPaintings', async (req, res) => {
+    const userId = req.cookies?.userId
+
+    try {
+        if(userId) {
+            const paintings = await userManager.getOwned(userId)
+
+            res.status(200).json(paintings.ownedPaintings)
+        } else {
+            throw new Error('You are not authorized!')
+        }
+    } catch (err) {
+        res.status(400).json({
+            message: err.message
+        })
+    }
+})
+
+router.get('/getLikedPaintings', async (req, res) => {
+    const userId = req.cookies?.userId
+
+    try {
+        if(userId) {
+            const paintings = await userManager.getLiked(userId)
+
+            res.status(200).json(paintings.likedPaintings)
+        } else {
+            throw new Error('You are not authorized!')
+        }
     } catch (err) {
         res.status(400).json({
             message: err.message
