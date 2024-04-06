@@ -27,7 +27,7 @@
             </div>
         </article>
         </ng-container>
-        <p *ngIf="!paintings">No paintings yet!</p>
+        <p *ngIf="paintings?.length == 0">No paintings yet!</p>
         </div>
     </section>
 </section>

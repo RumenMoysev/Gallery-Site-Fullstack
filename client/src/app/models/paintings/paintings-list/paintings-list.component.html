@@ -13,5 +13,5 @@
             </div>
         </article>
     </ng-container>
-    <p *ngIf="!paintings" style="font-size: 40px; text-shadow: 0 0 10px black;">No paintings yet!</p>
+    <p *ngIf="paintings?.length == 0" style="font-size: 40px; text-shadow: 0 0 10px black;">No paintings yet!</p>
 </section>
