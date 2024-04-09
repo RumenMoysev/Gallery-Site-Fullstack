@@ -7,6 +7,7 @@ import { ImageUrlDirective } from './directives/image-url-directive.directive';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { EditPaintingComponent } from './edit-painting/edit-painting.component';
+import { CutTextPipe } from 'src/app/pipes/cut-text-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { EditPaintingComponent } from './edit-painting/edit-painting.component';
     AddPaintingComponent,
     PaintingDetailsComponent,
     ImageUrlDirective,
-    EditPaintingComponent
+    EditPaintingComponent,
+    CutTextPipe
   ],
   imports: [
     CommonModule,
