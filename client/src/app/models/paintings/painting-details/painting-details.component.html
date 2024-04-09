@@ -3,8 +3,8 @@
         <div class="headingContainer">
             <h2>{{paintingDetails?.title}}</h2>
             <div>
-                <p>Created on: {{paintingDetails?.createdAtTime}}</p>
-                <p>Last updated on: {{paintingDetails?.updatedAtTime}}</p>
+                <p>Created on: {{paintingDetails?.createdAtTime }}</p>
+                <p *ngIf="paintingDetails?.updatedAtTime">Last updated on: {{paintingDetails?.updatedAtTime}}</p>
             </div>
         </div>
         <div class="infoContainer">
