@@ -4,7 +4,7 @@
             <h3>{{painting.title | cutTextPipe:20}}</h3>
             <div class="innerContainer">
                 <div class="pBtnContainer">
-                    <p>{{painting.summary}}</p>
+                    <p>{{painting.summary | cutTextPipe:80}}</p>
                     <div>
                         <a class="detailsBtn" routerLink={{painting._id}}>Details</a>
                     </div>
