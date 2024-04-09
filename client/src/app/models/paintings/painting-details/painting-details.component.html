@@ -21,7 +21,8 @@
             </div>
             <div class="imgContainer">
                 <img src={{paintingDetails?.imageUrl}}/>
-                <p class="likeCount">Number of likes: {{paintingDetails?.likes?.length}}</p>
+                <p *ngIf="paintingDetails?.likes?.length" class="likeCount">Number of likes: {{paintingDetails?.likes?.length}}</p>
+                <p *ngIf="!paintingDetails?.likes?.length" class="likeCount">No likes yet!</p>
             </div>
         </div>
     </article>
