@@ -70,5 +70,8 @@
                 <p>Passwords do not match!</p>
             </div>
         </ng-container>
+        <div class="error" *ngIf="errorMsg">
+            <p>{{errorMsg}}</p>
+        </div>
     </div>
 </section>
