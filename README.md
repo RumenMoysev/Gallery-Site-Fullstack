@@ -30,7 +30,7 @@ This website is a platform for people who are art lovers and want to share some 
 - **View Profile:** Users can view their own profile with created and liked posts.
 
 ## Installation
-First clone or download (and extract) the ZIP file of this repository
+First clone or download (and extract) the ZIP file of this repository  
 Then:
 ```bash
 cd client 
