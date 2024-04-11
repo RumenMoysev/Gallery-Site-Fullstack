@@ -1,4 +1,4 @@
-<section class="paintingsPage">
+<section *ngIf="paintings" class="paintingsPage">
     <ng-container *ngIf="paintings">
         <article *ngFor="let painting of paintings" class="paintingContainer">
             <h3>{{painting.title | cutTextPipe:20}}</h3>
@@ -15,3 +15,8 @@
     </ng-container>
     <p *ngIf="paintings?.length == 0" style="font-size: 40px; text-shadow: 0 0 10px black;">No paintings yet!</p>
 </section>
+
+<div class="spinner" *ngIf="isLoading">
+    <div class="ring"></div>
+    <span>loading...</span>
+</div>

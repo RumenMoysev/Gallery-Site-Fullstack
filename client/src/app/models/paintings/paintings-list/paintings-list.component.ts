@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PaintingsService } from '../paintings.service';
 import { painting } from 'src/app/types/painting';
-import { tap } from 'rxjs';
 
 @Component({
     selector: 'app-paintings-list',
@@ -10,10 +9,16 @@ import { tap } from 'rxjs';
 })
 export class PaintingsListComponent implements OnInit{
     paintings: painting[] | undefined
+    isLoading: boolean = true
 
     constructor(private paintingsService: PaintingsService) {}
 
     ngOnInit(): void {
-        this.paintingsService.getAllPaintings().pipe(tap(paintings => this.paintings = paintings as painting[])).subscribe()
+        this.paintingsService.getAllPaintings().subscribe({
+            next: paintings => {
+                this.paintings = paintings
+                this.isLoading = false
+            },
+        })
     }
 }
