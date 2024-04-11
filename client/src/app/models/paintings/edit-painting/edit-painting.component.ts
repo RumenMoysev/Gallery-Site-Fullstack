@@ -30,7 +30,7 @@ export class EditPaintingComponent implements OnInit{
         if (form.valid) {
             this.paintingsService.editPainting(form.value.paintingTitle, form.value.summary, form.value.description, form.value.imageUrl, this.paintingDetails?._id)
             .subscribe({
-                next: data => this.router.navigate(['/gallery']),
+                next: data => this.router.navigate([`/gallery/${this.paintingDetails?._id}`]),
                 error: data => this.errorMsg = data.error.message
         })
         }
