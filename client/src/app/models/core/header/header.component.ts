@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
         return this.userService.isLoggedIn
     }
 
-    constructor(private userService: UserService, private router: Router) { }
+    constructor(private userService: UserService, private router: Router) {}
 
     ngOnInit(): void {
         if (document.cookie.includes('userId=')) {
