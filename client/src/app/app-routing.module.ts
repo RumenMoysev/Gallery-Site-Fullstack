@@ -9,6 +9,7 @@ import { PaintingDetailsComponent } from './models/paintings/painting-details/pa
 import { authGuard, unauthGuard } from './guards/auth.guard';
 import { EditPaintingComponent } from './models/paintings/edit-painting/edit-painting.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -22,7 +23,9 @@ const routes: Routes = [
         ]
     },
     { path: 'add-painting', canActivate: [authGuard], component: AddPaintingComponent},
-    { path: 'my-profile', canActivate: [authGuard], component: ProfileComponent}
+    { path: 'my-profile', canActivate: [authGuard], component: ProfileComponent},
+    { path: '404', component: NotFoundComponent},
+    { path: '**', redirectTo: '/404'}
 ];
 
 @NgModule({

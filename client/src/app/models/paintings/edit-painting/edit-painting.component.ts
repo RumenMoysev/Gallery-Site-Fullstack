@@ -19,7 +19,10 @@ export class EditPaintingComponent implements OnInit{
     }
 
     getPaingingDetails(paintingId: string) {
-        this.paintingsService.getPaintingsDetails(paintingId).subscribe(paintingDetails => this.paintingDetails = paintingDetails as paintingDetails)
+        this.paintingsService.getPaintingsDetails(paintingId).subscribe({
+            next: paintingDetails => this.paintingDetails = paintingDetails,
+            error: () => this.router.navigate(['/404'])
+        })
     }
 
     editPainting(form: NgForm) {

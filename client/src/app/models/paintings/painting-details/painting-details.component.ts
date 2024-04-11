@@ -33,9 +33,12 @@ export class PaintingDetailsComponent implements OnInit {
     }
 
     getPaintingDetails(paintingId: string) {
-        this.paintingsService.getPaintingsDetails(paintingId).subscribe((details) => {
-            this.paintingDetails = details
-            this.paintingDetails.owner = this.paintingDetails.owner === this.userService.userId
+        this.paintingsService.getPaintingsDetails(paintingId).subscribe({
+            next: details => {
+               this.paintingDetails = details
+               this.paintingDetails.owner = this.paintingDetails.owner === this.userService.userId
+               },
+            error:() => this.router.navigate(['/404'])
         })
     }
 
