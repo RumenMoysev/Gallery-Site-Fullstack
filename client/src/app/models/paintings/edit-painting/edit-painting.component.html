@@ -67,6 +67,9 @@
                 <p>Please provide a real imageUrl!</p>
             </div>
         </ng-container>
+        <div class="error" *ngIf="errorMsg">
+            <p>{{errorMsg}}</p>
+        </div>
     </div>
 
 </section>

@@ -11,6 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class EditPaintingComponent implements OnInit{
     paintingDetails: paintingDetails | undefined
+    errorMsg: string | undefined
 
     constructor(private paintingsService: PaintingsService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -27,7 +28,11 @@ export class EditPaintingComponent implements OnInit{
 
     editPainting(form: NgForm) {
         if (form.valid) {
-            this.paintingsService.editPainting(form.value.paintingTitle, form.value.summary, form.value.description, form.value.imageUrl, this.paintingDetails?._id).subscribe(data => this.router.navigate(['/gallery']))
+            this.paintingsService.editPainting(form.value.paintingTitle, form.value.summary, form.value.description, form.value.imageUrl, this.paintingDetails?._id)
+            .subscribe({
+                next: data => this.router.navigate(['/gallery']),
+                error: data => this.errorMsg = data.error.message
+        })
         }
     }
 }
