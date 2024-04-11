@@ -29,15 +29,15 @@ export class UserService implements OnDestroy{
     }
 
     register(email: string, username: string, password: string, repeatPassword: string) {
-        return this.http.post('api/users/register', { email, username, password, repeatPassword }).pipe(tap((user) => this.user$$.next(user as User)))
+        return this.http.post<User>('api/users/register', { email, username, password, repeatPassword }).pipe(tap((user) => this.user$$.next(user)))
     }
 
     login(email: string, username: string, password: string) {
-        return this.http.post('api/users/login', { email, username, password }).pipe(tap((user) => this.user$$.next(user as User)))
+        return this.http.post<User>('api/users/login', { email, username, password }).pipe(tap((user) => this.user$$.next(user)))
     }
 
     getUser() {
-        return this.http.get('api/users/getUser').pipe(tap((user) => this.user$$.next(user as User)))
+        return this.http.get<User>('api/users/getUser').pipe(tap((user) => this.user$$.next(user)))
     }
 
     logout() {

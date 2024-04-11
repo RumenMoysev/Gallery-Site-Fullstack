@@ -22,6 +22,6 @@ export class HomeComponent implements OnInit{
     }
 
     ngOnInit(): void {
-        this.paintingsService.getLast2().subscribe(data => this.paintings = data as painting[])
+        this.paintingsService.getLast2().subscribe(data => this.paintings = data)
     }
 }

@@ -19,18 +19,18 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService, private paintingsService: PaintingsService) {}
 
   ngOnInit(): void {
-    this.userService.getUser().subscribe(user => this.userData = user as User)
+    this.userService.getUser().subscribe(user => this.userData = user)
     this.getOwned()
   }
 
   getOwned(): void {
-    this.paintingsService.getOwnedPaintings().subscribe(data => this.paintings = data as painting[])
+    this.paintingsService.getOwnedPaintings().subscribe(data => this.paintings = data)
     this.ownedSelected = true
     this.likedSelected = false
   }
 
   getLiked(): void {
-    this.paintingsService.getLikedPaintings().subscribe(data => this.paintings = data as painting[])
+    this.paintingsService.getLikedPaintings().subscribe(data => this.paintings = data)
     this.likedSelected = true
     this.ownedSelected = false
   }

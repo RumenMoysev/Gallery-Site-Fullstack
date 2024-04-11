@@ -34,7 +34,7 @@ export class PaintingDetailsComponent implements OnInit {
 
     getPaintingDetails(paintingId: string) {
         this.paintingsService.getPaintingsDetails(paintingId).subscribe((details) => {
-            this.paintingDetails = details as paintingDetails
+            this.paintingDetails = details
             this.paintingDetails.owner = this.paintingDetails.owner === this.userService.userId
         })
     }

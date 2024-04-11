@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { painting, paintingDetails } from 'src/app/types/painting';
 
 @Injectable({
     providedIn: 'root'
@@ -9,23 +10,23 @@ export class PaintingsService {
     constructor(private http: HttpClient) {}
 
     getAllPaintings() {
-        return this.http.get('api/paintings')
+        return this.http.get<painting[]>('api/paintings')
     }
 
     getLast2() {
-        return this.http.get('api/paintings/last2')
+        return this.http.get<painting[]>('api/paintings/last2')
     }
 
     getPaintingsDetails(paintingId: string) {
-        return this.http.get(`api/paintings/${paintingId}`)
+        return this.http.get<paintingDetails>(`api/paintings/${paintingId}`)
     }
 
     getOwnedPaintings() {
-        return this.http.get(`api/users/getOwnedPaintings`)
+        return this.http.get<painting[]>(`api/users/getOwnedPaintings`)
     }
 
     getLikedPaintings() {
-        return this.http.get(`api/users/getLikedPaintings`)
+        return this.http.get<painting[]>(`api/users/getLikedPaintings`)
     }
 
     addPainting(title: string, summary: string, description: string, imageUrl: string) {
