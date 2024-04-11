@@ -12,6 +12,7 @@ import { NgForm } from '@angular/forms';
 export class EditPaintingComponent implements OnInit{
     paintingDetails: paintingDetails | undefined
     errorMsg: string | undefined
+    isLoading: boolean = true
 
     constructor(private paintingsService: PaintingsService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -22,7 +23,8 @@ export class EditPaintingComponent implements OnInit{
     getPaingingDetails(paintingId: string) {
         this.paintingsService.getPaintingsDetails(paintingId).subscribe({
             next: paintingDetails => this.paintingDetails = paintingDetails,
-            error: () => this.router.navigate(['/404'])
+            error: () => this.router.navigate(['/404']),
+            complete: () => this.isLoading = false
         })
     }
 

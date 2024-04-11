@@ -1,4 +1,4 @@
-<section class="editPaintingPage center" *ngIf="paintingDetails">
+<section class="editPaintingPage center" *ngIf="paintingDetails && !isLoading">
     <form class="form" #form="ngForm" (ngSubmit)="editPainting(form)">
         <h2>Edit painting</h2>
         <div class="input-box">
@@ -73,3 +73,8 @@
     </div>
 
 </section>
+
+<div class="spinner" *ngIf="isLoading">
+    <div class="ring"></div>
+    <span>loading...</span>
+</div>

@@ -12,6 +12,7 @@ import { UserService } from '../../user/user.service';
 
 export class PaintingDetailsComponent implements OnInit {
     paintingDetails: paintingDetails | undefined
+    isLoading: boolean = true
 
     constructor(
         private activatedRoute: ActivatedRoute,
@@ -35,10 +36,11 @@ export class PaintingDetailsComponent implements OnInit {
     getPaintingDetails(paintingId: string) {
         this.paintingsService.getPaintingsDetails(paintingId).subscribe({
             next: details => {
-               this.paintingDetails = details
-               this.paintingDetails.owner = this.paintingDetails.owner === this.userService.userId
-               },
-            error:() => this.router.navigate(['/404'])
+                this.paintingDetails = details
+                this.paintingDetails.owner = this.paintingDetails.owner === this.userService.userId
+            },
+            error:() => this.router.navigate(['/404']),
+            complete: () => this.isLoading = false
         })
     }
 

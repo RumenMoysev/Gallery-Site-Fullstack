@@ -1,4 +1,4 @@
-<section class="detailsPage center">
+<section class="detailsPage center" *ngIf="!isLoading">
     <article class="detailsContainer">
         <div class="headingContainer">
             <h2>{{paintingDetails?.title}}</h2>
@@ -27,3 +27,8 @@
         </div>
     </article>
 </section>
+
+<div class="spinner" *ngIf="isLoading">
+    <div class="ring"></div>
+    <span>loading...</span>
+</div>
