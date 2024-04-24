@@ -28,6 +28,14 @@ export class UserService implements OnDestroy{
         return this.user?.userId
     }
 
+    get isAdmin(): boolean {
+        if(this.user?.role === 'admin') {
+            return true
+        } else {
+            return false
+        }
+    }
+
     register(email: string, username: string, password: string, repeatPassword: string) {
         return this.http.post<User>('api/users/register', { email, username, password, repeatPassword }).pipe(tap((user) => this.user$$.next(user)))
     }
