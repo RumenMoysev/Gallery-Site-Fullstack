@@ -16,8 +16,10 @@
         </ng-container>
         <ng-container *ngIf="isLoggedIn">
             <a routerLink="/register" style="--i:5;" (click)="logout()">Logout</a>
-            <a routerLink="/add-painting" style="--i:6;">Add Painting</a>
             <a routerLink="/my-profile" style="--i:7;">Profile</a>
-        </ng-container>  
+        </ng-container>
+        <ng-container *ngIf="isAdmin">
+            <a routerLink="/add-painting" style="--i:6;">Add Painting</a>
+        </ng-container>
     </nav>
 </header>

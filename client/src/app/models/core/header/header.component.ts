@@ -8,11 +8,15 @@ import { Router } from '@angular/router';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+    constructor(private userService: UserService, private router: Router) {}
+
     get isLoggedIn(): boolean {
         return this.userService.isLoggedIn
     }
 
-    constructor(private userService: UserService, private router: Router) {}
+    get isAdmin(): boolean {
+        return this.userService.isAdmin
+    }
 
     ngOnInit(): void {
         if (document.cookie.includes('userId=')) {
