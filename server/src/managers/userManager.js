@@ -111,7 +111,8 @@ async function getAuthResult(user) {
     const payload = {
         _id: user._id,
         email: user.email,
-        username: user.username
+        username: user.username,
+        role: user.role
     }
 
     const token = await jwt.sign(payload, SECRET)

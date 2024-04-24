@@ -6,7 +6,8 @@ router.post('/register', async (req, res) => {
     const userData = {
         email: req.body.email,
         username: req.body.username,
-        password: req.body.password
+        password: req.body.password,
+        role: 'user'
     }
 
     const rePassword = req.body.repeatPassword
@@ -19,7 +20,8 @@ router.post('/register', async (req, res) => {
         res.json({
             email: user.email,
             username: user.username,
-            userId: user._id
+            userId: user._id,
+            role: user.role
         })
 
     } catch (err) {
@@ -44,7 +46,8 @@ router.post('/login', async (req, res) => {
         res.json({
             email: user.email,
             username: user.username,
-            userId: user._id
+            userId: user._id,
+            role: user.role
         })
 
     } catch (err) {
