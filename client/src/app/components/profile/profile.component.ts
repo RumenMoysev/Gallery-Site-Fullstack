@@ -13,14 +13,14 @@ export class ProfileComponent implements OnInit {
   userData: User | undefined
   paintings: painting[] | undefined
 
-  ownedSelected: boolean = true
-  likedSelected: boolean = false
+  ownedSelected: boolean = false
+  likedSelected: boolean = true
 
   constructor(private userService: UserService, private paintingsService: PaintingsService) {}
 
   ngOnInit(): void {
     this.userService.getUser().subscribe(user => this.userData = user)
-    this.getOwned()
+    this.getLiked()
   }
 
   getOwned(): void {

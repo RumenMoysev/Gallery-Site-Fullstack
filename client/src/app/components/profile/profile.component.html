@@ -9,7 +9,7 @@
     
     <section class="profile">
         <div class='profileButtons'>
-            <button [ngClass]="{'selected': ownedSelected}"  (click)="getOwned()">Posted</button>
+            <button *ngIf="userData?.role == 'admin'" [ngClass]="{'selected': ownedSelected}"  (click)="getOwned()">Posted</button>
             <button [ngClass]="{'selected': likedSelected}" (click)="getLiked()">Liked</button>
         </div>
         <div class="paintingsPage1">
