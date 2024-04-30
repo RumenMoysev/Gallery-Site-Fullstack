@@ -68,7 +68,8 @@ router.get('/getUser', async (req, res) => {
         res.json({
             email: user.email,
             username: user.username,
-            userId: user._id
+            userId: user._id,
+            role: user.role
         })
     } catch (err) {
         res.status(400).json({
