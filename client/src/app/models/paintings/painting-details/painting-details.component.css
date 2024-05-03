@@ -27,6 +27,7 @@
     justify-content: space-between;
     margin-top: 50px;
     padding: 0 50px;
+    flex-wrap: wrap;
 }
 
 .detailsContainer .infoContainer div p {
@@ -68,8 +69,10 @@
     flex-basis: 40%;
 }
 
-.detailsContainer .infoContainer .likeCount {
-    text-align: end;
-    margin-right: 40px;
+.detailsContainer .infoContainer .priceAndLikes {
     margin-top: 20px;
+    margin-right: 8%;
+    width: 1000px;
+    display: flex;
+    justify-content: space-between;
 }
