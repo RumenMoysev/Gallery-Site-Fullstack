@@ -18,7 +18,7 @@
                 </div>
             </div>
             </ng-container>
-            <p *ngIf="!paintings" style="font-size: 40px; padding-left: 200px;">No paintings yet!</p>
+            <p *ngIf="!paintings || paintings.length === 0" style="font-size: 40px; padding-left: 200px;">No paintings yet!</p>
         </div>
     </div>
 </main>
