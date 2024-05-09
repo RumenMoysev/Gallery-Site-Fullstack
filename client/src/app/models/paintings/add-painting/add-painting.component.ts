@@ -13,7 +13,7 @@ export class AddPaintingComponent {
 
   addPainting(form: NgForm) {
     if(form.valid) {
-      this.paintingsService.addPainting(form.value.paintingTitle, form.value.summary, form.value.description, form.value.imageUrl).subscribe()
+      this.paintingsService.addPainting(form.value.paintingTitle, form.value.summary, form.value.description, form.value.imageUrl, form.value.price).subscribe()
       this.router.navigate(['/gallery'])
     }
   }

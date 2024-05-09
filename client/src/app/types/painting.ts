@@ -11,6 +11,7 @@ export interface paintingDetails {
     imageUrl: string,
     summary: string,
     description: string,
+    price: number,
     createdAtTime: string,
     updatedAtTime: string,
     likes: string[],
