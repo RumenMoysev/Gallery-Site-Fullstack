@@ -20,6 +20,10 @@ function validate (paintingData) {
     if (paintingData.description.length < descriptionLength) {
         throw new Error(`Painting description should be at least ${descriptionLength} characters`)
     }
+
+    if(paintingData.price < 1) {
+        throw new Error(`Painting price cannot be less than 1€ !`)
+    }
 }
 
 exports.getAllPaintings = () => {
@@ -40,7 +44,7 @@ exports.getLast2 = () => {
 
 exports.getPaintingDetails = (paintingId) => {
     try {
-        return Painting.findById(paintingId, 'title imageUrl summary description createdAtTime updatedAtTime likes _id owner')
+        return Painting.findById(paintingId, 'title imageUrl summary description price createdAtTime updatedAtTime likes _id owner')
     } catch (err) {
         throw new Error(err.message)
     }

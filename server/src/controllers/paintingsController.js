@@ -32,7 +32,6 @@ router.get('/:paintingId', async (req, res) => {
 
     try {
         const paintingDetails = await paintingsManager.getPaintingDetails(paintingId)
-
         res.status(200).json(paintingDetails)
     } catch (err) {
         res.status(401).json({
@@ -49,6 +48,7 @@ router.post('/', async (req, res) => {
         imageUrl: req.body.imageUrl,
         summary: req.body.summary,
         description: req.body.description,
+        price: req.body.price,
         createdAtTime: req.body.createdAtTime,
         owner: userId
     }
@@ -99,6 +99,7 @@ router.put('/:paintingId', async (req, res) => {
         imageUrl: req.body.imageUrl,
         summary: req.body.summary,
         description: req.body.description,
+        price: req.body.price,
         updatedAtTime: req.body.updatedAtTime
     }
 
