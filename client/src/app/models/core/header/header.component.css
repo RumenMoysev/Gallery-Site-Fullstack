@@ -100,7 +100,7 @@
     }
 
     #check:checked~.navbar {
-        height: 16rem;
+        height: var(--nav-bar-size);
     }
 
     .navbar a {

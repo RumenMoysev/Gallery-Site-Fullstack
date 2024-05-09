@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
     styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+    checked: boolean = false
+
     constructor(private userService: UserService, private router: Router) {}
 
     get isLoggedIn(): boolean {
@@ -22,6 +24,10 @@ export class HeaderComponent implements OnInit {
         if (document.cookie.includes('userId=')) {
             this.userService.getUser().subscribe()
         }
+    }
+
+    check(): void {
+        this.checked = !this.checked
     }
 
     logout(): void {

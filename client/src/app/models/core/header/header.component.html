@@ -1,25 +1,28 @@
 <header class="header">
     <a routerLink="/"><img class="headerLogo" src="assets/images/art-logo.png"/></a>
 
-    <input type="checkbox" id="check">
+    <input type="checkbox" id="check" [checked]="checked" (click)="check()">
     <label for="check" class="icons">
         <i class='bx bx-menu' id="menu-icon"></i>
         <i class='bx bx-x' id="close-icon"></i>
     </label>
 
+    <div *ngIf="isLoggedIn" style="--nav-bar-size: 16rem"></div>
+    <div *ngIf="!isLoggedIn" style="--nav-bar-size: 13.5rem"></div>
+
     <nav class="navbar">
-        <a routerLink="/" style="--i:1;">Home</a>
-        <a routerLink="/gallery" style="--i:2;">Gallery</a>
+        <a routerLink="/" style="--i:1;" (click)="check()">Home</a>
+        <a routerLink="/gallery" style="--i:2;" (click)="check()">Gallery</a>
         <ng-container *ngIf="!isLoggedIn">
-            <a routerLink="/login" style="--i:3;">Login</a>
-            <a routerLink="/register" style="--i:4;">Register</a>
+            <a routerLink="/login" style="--i:3;" (click)="check()">Login</a>
+            <a routerLink="/register" style="--i:4;" (click)="check()">Register</a>
         </ng-container>
         <ng-container *ngIf="isLoggedIn">
-            <a routerLink="/register" style="--i:5;" (click)="logout()">Logout</a>
-            <a routerLink="/my-profile" style="--i:7;">Profile</a>
+            <a routerLink="/register" style="--i:3;" (click)="logout()">Logout</a>
+            <a routerLink="/my-profile" style="--i:4;" (click)="check()">Profile</a>
         </ng-container>
         <ng-container *ngIf="isAdmin">
-            <a routerLink="/add-painting" style="--i:6;">Add Painting</a>
+            <a routerLink="/add-painting" style="--i:5;" (click)="check()">Add Painting</a>
         </ng-container>
     </nav>
 </header>
