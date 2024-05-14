@@ -1,6 +1,6 @@
 main .row {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     align-items: center;
     gap: 2rem;
     padding: 0 0 0 10%;
@@ -123,7 +123,27 @@ main .col .noPaintings {
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        padding: 0;
+    }
+
+    main .row .col:nth-child(1) {
         padding: 200px 10% 0 10%;
+    }
+
+    main .row .col:nth-child(2) {
+        justify-content: center;
+    }
+
+    main .row .col:nth-child(1) p {
+        padding: 10px 6px 10px 5px;
+        text-align: center;
+        /* background-color: rgba(0, 0, 0, .1);
+        backdrop-filter: blur(3px); */
+        border-radius: 10%;
+    }
+
+    main .row .col h1 {
+        text-align: center;
     }
 
     main .col .buttonContainer {
