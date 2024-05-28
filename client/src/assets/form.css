@@ -120,6 +120,29 @@
     animation: slideIn 12s ease forwards;
 }
 
+@media (max-width: 600px) {
+    .form {
+        width: 350px;
+        border-radius: 0.6rem;
+        padding: 20px 20px;
+        margin-top: 200px;
+    }
+
+    .error-container {
+        flex-direction: row;
+        right: 0;
+        width: 90%;
+    }
+
+    .error {
+        border-radius: 0.5rem;
+        padding: 0;
+        position: relative;
+        top: -35px;
+        animation: slideIn 12s ease forwards;
+    }   
+}
+
 @keyframes slideIn {
     0% {
         right: -200px;
@@ -133,7 +156,11 @@
         right: 6%;
     }
 
+    /* 100% {
+        right: -2000px;
+    } */
+    
     100% {
-        right: -200px;
+        right: 6%;
     }
 }
