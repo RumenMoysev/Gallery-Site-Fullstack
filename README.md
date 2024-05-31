@@ -69,3 +69,7 @@ ng serve
   - MongoDB (Mongoose): A MongoDB object modeling tool designed to work in an asynchronous environment.
   - Bcrypt: A library for hashing passwords.
   - JWT (JSON Web Tokens): A compact, URL-safe means of representing claims to be transferred between two parties.
+
+##Currently working on
+
+- **Mobile View**
