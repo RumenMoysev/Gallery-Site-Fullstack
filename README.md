@@ -70,6 +70,6 @@ ng serve
   - Bcrypt: A library for hashing passwords.
   - JWT (JSON Web Tokens): A compact, URL-safe means of representing claims to be transferred between two parties.
 
-##Currently working on
+## Currently working on
 
-- **Mobile View**
+- Mobile View
