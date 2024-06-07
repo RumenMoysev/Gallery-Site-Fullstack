@@ -156,7 +156,7 @@ ng serve
 ### Mobile view
 - **Home page**
 <p align='center'>
-    <img src='./client/screenshots/mobile/Home.jpg' width="480" height="1411" alt='logo'>
+    <img src='./client/screenshots/mobile/Home.jpg' width="360" height="1058" alt='logo'>
 </p>
 
 - **Gallery**
@@ -166,30 +166,30 @@ ng serve
 
 - **Login**
 <p align='center'>
-    <img src='./client/screenshots/mobile/Login.jpg' width="480" height="990" alt='logo'>
+    <img src='./client/screenshots/mobile/Login.jpg' width="360" height="742.5" alt='logo'>
 </p>
 
 - **Register**
   - With Errors
     <p align='center'>
-        <img src='./client/screenshots/mobile/Register.jpg' width="480" height="990" alt='logo'>
+        <img src='./client/screenshots/mobile/Register.jpg' width="360" height="742.5" alt='logo'>
     </p>
 
   - Without Errors
   <p align='center'>
-        <img src='./client/screenshots/mobile/Register1.jpg' width="480" height="990" alt='logo'>
+        <img src='./client/screenshots/mobile/Register1.jpg' width="360" height="742.5" alt='logo'>
     </p>
 
 - **Navbar**
   - Admin
     <p align='center'>
-      <img src='./client/screenshots/mobile/Navbar-admin.jpg' width="480" height="641" alt='logo'>
+      <img src='./client/screenshots/mobile/Navbar-admin.jpg' width="360" height="481" alt='logo'>
     </p>
   - User
     <p align='center'>
-      <img src='./client/screenshots/mobile/Navbar-user.jpg' width="480" height="641" alt='logo'>
+      <img src='./client/screenshots/mobile/Navbar-user.jpg' width="360" height="481" alt='logo'>
     </p>
   - Guest
     <p align='center'>
-      <img src='./client/screenshots/mobile/Navbar-guest.jpg' width="480" height="641" alt='logo'>
+      <img src='./client/screenshots/mobile/Navbar-guest.jpg' width="360" height="481" alt='logo'>
     </p>
