@@ -153,7 +153,7 @@ ng serve
       <img src='./client/screenshots/desktop/Navbar-guest.png' alt='logo'>
     </p>
 
-### Mobile view
+### Mobile view (unfinished)
 - **Home page**
 <p align='center'>
     <img src='./client/screenshots/mobile/Home.jpg' width="360" height="1058" alt='logo'>
