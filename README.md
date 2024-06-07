@@ -21,13 +21,13 @@ This website is a platform for people who are art lovers and want to share some 
 ### Reviews
 
 - **View Reviews:** Users can browse and view existing reviews.
-- **Create Reviews:** Authenticated users can create new reviews.
-- **Edit and Delete Reviews:** Review owners can edit and delete their own reviews.
+- **Create Reviews:** Admin can create new reviews.
+- **Edit and Delete Reviews:** Admin can edit and delete their own reviews.
 - **Like Reviews:** Users can like reviews.
 
 ### Profile Page
 
-- **View Profile:** Users can view their own profile with created and liked posts.
+- **View Profile:** Users can view their own profile with their liked posts; admins can also see their created posts.
 
 ## Installation
 First clone or download (and extract) the ZIP file of this repository  
@@ -73,3 +73,11 @@ ng serve
 ## Currently working on
 
 - Mobile View
+
+## Screenshots
+
+### Desktop view
+- **Home page**
+<p align='center'>
+    <img src='./client/screenshots/desktop/Home.png' width='300' height='250' alt='logo'>
+</p>
