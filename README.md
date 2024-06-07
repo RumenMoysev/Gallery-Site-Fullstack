@@ -161,7 +161,7 @@ ng serve
 
 - **Gallery**
 <p align='center'>
-    <img src='./client/screenshots/mobile/Gallery.jpg' width="480" height="2027" alt='logo'>
+    <img src='./client/screenshots/mobile/Gallery.jpg' width="360" height="1520" alt='logo'>
 </p>
 
 - **Login**
@@ -183,13 +183,13 @@ ng serve
 - **Navbar**
   - Admin
     <p align='center'>
-      <img src='./client/screenshots/mobile/Navbar-admin.jpg' width="480" height="990" alt='logo'>
+      <img src='./client/screenshots/mobile/Navbar-admin.jpg' width="480" height="641" alt='logo'>
     </p>
   - User
     <p align='center'>
-      <img src='./client/screenshots/mobile/Navbar-user.jpg' width="480" height="990" alt='logo'>
+      <img src='./client/screenshots/mobile/Navbar-user.jpg' width="480" height="641" alt='logo'>
     </p>
   - Guest
     <p align='center'>
-      <img src='./client/screenshots/mobile/Navbar-guest.jpg' width="480" height="990" alt='logo'>
+      <img src='./client/screenshots/mobile/Navbar-guest.jpg' width="480" height="641" alt='logo'>
     </p>
