@@ -79,5 +79,5 @@ ng serve
 ### Desktop view
 - **Home page**
 <p align='center'>
-    <img src='./client/screenshots/desktop/Home.png' width='300' height='250' alt='logo'>
+    <img src='./client/screenshots/desktop/Home.png' alt='logo'>
 </p>
