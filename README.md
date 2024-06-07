@@ -81,3 +81,115 @@ ng serve
 <p align='center'>
     <img src='./client/screenshots/desktop/Home.png' alt='logo'>
 </p>
+
+- **Gallery**
+<p align='center'>
+    <img src='./client/screenshots/desktop/Gallery.png' alt='logo'>
+</p>
+
+- **Details page**
+  - Admin
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Details-admin.png' alt='logo'>
+    </p>
+  - User (not liked)
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Details-user.png' alt='logo'>
+    </p>
+  - User (liked)
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Details-user1.png' alt='logo'>
+    </p>  
+  - Guest
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Details-guest.png' alt='logo'>
+    </p>
+
+- **Login**
+<p align='center'>
+    <img src='./client/screenshots/desktop/Login.png' alt='logo'>
+</p>
+
+- **Register**
+<p align='center'>
+    <img src='./client/screenshots/desktop/Register.png' alt='logo'>
+</p>
+
+- **Edit**
+<p align='center'>
+    <img src='./client/screenshots/desktop/Edit.png' alt='logo'>
+</p>
+
+- **Add Painting**
+<p align='center'>
+    <img src='./client/screenshots/desktop/Add-Painting.png' alt='logo'>
+</p>
+
+- **Profile page**
+  - Admin
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Profile-admin.png' alt='logo'>
+    </p>
+  - User (without liked paintings)
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Profile-user.png' alt='logo'>
+    </p>
+  - User (with liked paintings)
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Profile-user1.png' alt='logo'>
+    </p>
+
+- **Navbar**
+  - Admin
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Navbar-admin.png' alt='logo'>
+    </p>
+  - User
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Navbar-user.png' alt='logo'>
+    </p>
+  - Guest
+    <p align='center'>
+      <img src='./client/screenshots/desktop/Navbar-guest.png' alt='logo'>
+    </p>
+
+### Mobile view
+- **Home page**
+<p align='center'>
+    <img src='./client/screenshots/mobile/Home.jpg' width="480" height="1411" alt='logo'>
+</p>
+
+- **Gallery**
+<p align='center'>
+    <img src='./client/screenshots/mobile/Gallery.jpg' width="480" height="2027" alt='logo'>
+</p>
+
+- **Login**
+<p align='center'>
+    <img src='./client/screenshots/mobile/Login.jpg' width="480" height="990" alt='logo'>
+</p>
+
+- **Register**
+  - With Errors
+    <p align='center'>
+        <img src='./client/screenshots/mobile/Register.jpg' width="480" height="990" alt='logo'>
+    </p>
+
+  - Without Errors
+  <p align='center'>
+        <img src='./client/screenshots/mobile/Register1.jpg' width="480" height="990" alt='logo'>
+    </p>
+
+- **Navbar**
+  - Admin
+    <p align='center'>
+      <img src='./client/screenshots/mobile/Navbar-admin.jpg' width="480" height="990" alt='logo'>
+    </p>
+  - User
+    <p align='center'>
+      <img src='./client/screenshots/mobile/Navbar-user.jpg' width="480" height="990" alt='logo'>
+    </p>
+  - Guest
+    <p align='center'>
+      <img src='./client/screenshots/mobile/Navbar-guest.jpg' width="480" height="990" alt='logo'>
+    </p>
