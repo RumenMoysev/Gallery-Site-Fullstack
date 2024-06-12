@@ -10,7 +10,7 @@
         <div class="infoContainer">
             <div>
                 <p>{{paintingDetails?.description}}</p>
-                <div class="detailsBtnContainer">
+                <div class="detailsBtnContainer" *ngIf="isLoggedIn">
                     <a *ngIf="!paintingDetails?.owner && isLoggedIn && !hasLiked" class="detailsBtn" href="" (click)="likePainting($event)">Like</a>
                     <p *ngIf="hasLiked">Thanks for liking!</p>
                     <ng-container *ngIf="paintingDetails?.owner">
