@@ -82,6 +82,7 @@
         width: 350px;
         min-height: 550px;
         border-radius: 0.5rem;
+        padding-bottom: 50px;
     }
 
     .detailsContainer .headingContainer div {
@@ -98,10 +99,6 @@
         margin-top: 30px;
         padding: 0 20px;
         flex-wrap: wrap-reverse;
-    }
-
-    .detailsContainer .infoContainer div .detailsBtnContainer {
-        margin-bottom: 30px;
     }
 
     .detailsContainer .infoContainer .imgContainer {
