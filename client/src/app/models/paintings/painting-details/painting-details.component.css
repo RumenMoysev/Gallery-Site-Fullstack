@@ -79,8 +79,8 @@
 @media (max-width: 600px) {
     .detailsContainer {
         margin-top: 150px;
-        width: 380px;
-        min-height: 600px;
+        width: 350px;
+        min-height: 550px;
         border-radius: 0.5rem;
     }
 
@@ -112,8 +112,8 @@
     .detailsContainer .infoContainer .imgContainer img {
         width: auto;
         height: auto;
-        max-width: 230px;
-        max-height: 300px;
+        max-width: 200px;
+        max-height: 260px;
     }
 
     .detailsContainer .infoContainer .priceAndLikes {
