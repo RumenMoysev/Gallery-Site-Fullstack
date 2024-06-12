@@ -131,6 +131,7 @@
     .error-container {
         flex-direction: row;
         right: 0;
+        top: 140px;
         width: 90%;
     }
 
