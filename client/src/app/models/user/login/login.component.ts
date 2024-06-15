@@ -22,4 +22,9 @@ export class LoginComponent {
             })
         }
     }
+
+    goToRegister(e: Event) {
+        e.preventDefault()
+        this.router.navigate(['/register'])
+    }
 }
